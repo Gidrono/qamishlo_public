@@ -51,13 +51,14 @@ interruptBtn?.addEventListener("click", async () => {
   if (interruptBtn.disabled) return;
 
   interruptBtn.disabled = true;
-  demo.classList.add("is-paused");
+  demo.classList.add("is-paused", "is-listening");
   interruptLabel.textContent = "Listening…";
   chat.hidden = false;
   chat.replaceChildren();
   lesson.textContent = "Lesson paused. Ask anything about what you just heard.";
 
   await sleep(700);
+  demo.classList.remove("is-listening");
   addBubble("user", "How is that different from the earlier Republic?");
   interruptLabel.textContent = "Answering…";
 
@@ -73,7 +74,7 @@ interruptBtn?.addEventListener("click", async () => {
     "Resuming with a fade-in… “That personal loyalty is why crossing the Rubicon was not just a river. It was a choice about who Rome belonged to.”";
 
   await sleep(1400);
-  demo.classList.remove("is-paused");
+  demo.classList.remove("is-paused", "is-listening");
   interruptLabel.textContent = "Hold to ask";
   interruptBtn.disabled = false;
   lesson.textContent = originalLesson;
