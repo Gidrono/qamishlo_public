@@ -6,7 +6,7 @@
     <title>Privacy Policy — Qamishlo</title>
     <meta
       name="description"
-      content="How Qamishlo handles data in the private beta: invites, voice Q&A, course generation, and crash telemetry."
+      content="How Qamishlo handles data in the private beta: Google sign-in, voice Q&A, course generation, and crash telemetry."
     />
     <meta name="theme-color" content="#e8eee9" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
@@ -40,7 +40,7 @@
     <main class="legal">
       <p class="eyebrow">Legal · Private beta</p>
       <h1>Privacy Policy</h1>
-      <p class="legal-meta">Last updated: August 21, 2026 · Version 1</p>
+      <p class="legal-meta">Last updated: September 4, 2026 · Version 2</p>
       <p class="legal-note">
         This policy describes how the Qamishlo private beta actually works today. It is not formal
         legal advice and may change as the product evolves. Contact
@@ -58,50 +58,66 @@
 
       <h2>Who this applies to</h2>
       <p>
-        Private-beta testers who use the Android app or web preview with an invite token. There is
-        no public account signup and no email/password identity in this beta.
+        Private-beta testers who use the Android app (including installs from Google Play testing
+        tracks) or the web preview. There is no public self-serve signup. Access is limited to
+        people the operator has allowlisted.
+      </p>
+
+      <h2>How you sign in</h2>
+      <p>
+        On Android Play / private-beta builds, you sign in with <strong>Google</strong> through
+        <strong>Microsoft Entra External ID</strong>. We receive identity claims from that sign-in
+        (typically email and a stable account id) and create or update your Qamishlo account from
+        them. We do not use a separate email/password account in this beta.
+      </p>
+      <p>
+        Access is gated by an operator-managed allowlist, usually your Google account email (the
+        same address used for Play testing where applicable). Some flows may still use a revocable
+        invite token that the operator issues and links to your signed-in account. Sharing invite
+        tokens is not allowed.
       </p>
 
       <h2>What we collect and process</h2>
       <ul>
         <li>
-          <strong>Invite identity.</strong> Access uses a revocable invite token. We associate usage
-          with an invite-bound <code>user_id</code> (a label/slug), not your real name or email
-          unless you type that into a free-text learning topic.
+          <strong>Account identity.</strong> Email and provider account identifiers from Google /
+          Entra sign-in; a Qamishlo <code>user_id</code>; optional display name you choose; and
+          whether your account is linked to an allowlisted invite.
         </li>
         <li>
-          <strong>Course inputs.</strong> Subject, learning goal, and level you submit to generate
-          courses.
+          <strong>Course inputs.</strong> Subject, learning goal, language, and level you submit to
+          generate courses.
         </li>
         <li>
           <strong>Generated learning content.</strong> Lesson scripts, synthesized lesson audio,
-          playback progress, and related catalog data stored on our servers (and may be stored in
-          Azure Blob storage).
+          playback progress, course ratings, and related catalog data stored on our servers (and may
+          be stored in Azure Blob storage).
         </li>
         <li>
           <strong>Voice Q&amp;A.</strong> When you ask a spoken question, a short microphone clip
           (about 30 seconds or less) is uploaded so we can transcribe it with Microsoft Azure OpenAI
           speech-to-text. We do not keep the raw audio file after transcription. Question and answer
-          text may be stored; answer audio may be stored for playback.
+          text may be stored; answer audio may be stored for playback. Typed questions are processed
+          the same way without uploading mic audio.
         </li>
         <li>
-          <strong>Crash and error diagnostics</strong> (Android azureDev builds). Technical
-          crash/error reports (app version, OS version, device model, exception message/stack,
-          invite <code>user_id</code>, optional session/course/lesson ids) may be sent to our API
-          and optionally to Azure Application Insights. We scrub secrets and signed URL query
+          <strong>Crash and error diagnostics</strong> (Android azureDev / Play beta builds).
+          Technical crash/error reports (app version, OS version, device model, exception
+          message/stack, <code>user_id</code>, optional session/course/lesson ids) may be sent to our
+          API and optionally to Azure Application Insights. We scrub secrets and signed URL query
           parameters before sending.
         </li>
         <li>
           <strong>Operational records.</strong> Estimated AI spend, activity events, and generation
-          job metadata tied to your invite <code>user_id</code>.
+          job metadata tied to your account / invite.
         </li>
       </ul>
 
       <h2>What stays on your device</h2>
       <ul>
         <li>
-          <strong>Onboarding questionnaire answers</strong> used in the app UI are not sent to our
-          servers in this beta.
+          <strong>Onboarding questionnaire answers</strong> used in the app UI (other than display
+          name, which may be saved to your account) are not sent to our servers in this beta.
         </li>
         <li>
           <strong>Commute detection.</strong> Activity recognition (walking / in-vehicle) and car
@@ -111,8 +127,9 @@
           Qamishlo does not receive that stream.
         </li>
         <li>
-          <strong>Invite token</strong> is stored locally on the device (or in browser storage for
-          the web preview).
+          <strong>Local session data.</strong> Auth tokens and related session preferences are stored
+          on the device (or in browser storage for the web preview). Offline lesson downloads and
+          local caches may also remain on the device until you clear app data or uninstall.
         </li>
       </ul>
 
@@ -128,27 +145,38 @@
       <h2>Processors and third parties</h2>
       <p>Depending on the feature, we use:</p>
       <ul>
-        <li><strong>Microsoft Azure</strong> — OpenAI chat, speech-to-text, text-to-speech, hosting/storage, Application Insights.</li>
+        <li>
+          <strong>Google</strong> — Sign in with Google (identity); Google Play distribution and Play
+          services for optional on-device activity recognition.
+        </li>
+        <li>
+          <strong>Microsoft Entra External ID</strong> — authentication for the Android beta.
+        </li>
+        <li>
+          <strong>Microsoft Azure</strong> — OpenAI chat, speech-to-text, text-to-speech,
+          hosting/storage, Application Insights.
+        </li>
         <li><strong>ElevenLabs</strong> — lesson narration audio synthesis (when configured).</li>
       </ul>
       <p>
-        We do not run marketing or product-analytics SDKs (no advertising ID collection) in this
-        beta.
+        We do not sell your personal information. We do not run marketing or product-analytics SDKs
+        (no advertising ID collection) in this beta.
       </p>
 
       <h2>Retention and deletion</h2>
       <p>
         Beta data is retained while the private beta operates and as needed for debugging, cost
         control, and the shared course catalog. To request deletion of data associated with your
-        invite <code>user_id</code>, email
-        <a href="mailto:gidi@qamishlo.org">gidi@qamishlo.org</a>. We may revoke your invite at
-        any time.
+        account (email / <code>user_id</code>), email
+        <a href="mailto:gidi@qamishlo.org">gidi@qamishlo.org</a>. We may revoke your access at any
+        time.
       </p>
 
       <h2>Children</h2>
       <p>
         The private beta is not directed at children under 13 (or the equivalent minimum age in your
-        region). Do not use it if you are under that age.
+        region), and the intended audience is adults (18+). Do not use it if you are under the
+        applicable minimum age.
       </p>
 
       <h2>Changes</h2>

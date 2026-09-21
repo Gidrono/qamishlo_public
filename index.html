@@ -6,13 +6,13 @@
     <title>Qamishlo — Listen on the way. Ask when you need to.</title>
     <meta
       name="description"
-      content="Qamishlo is a hands-free audio learning app for commuters. Listen to personalized micro-courses, ask questions out loud, and pick up exactly where you left off."
+      content="Qamishlo is an AI audio learning app. Listen to courses pitched for kids or adults, ask questions mid-lesson, and share what you make with your family."
     />
     <meta name="theme-color" content="#e8eee9" />
     <meta property="og:title" content="Qamishlo — Listen on the way." />
     <meta
       property="og:description"
-      content="Personalized audio courses for the commute. Ask mid-lesson. Built native for iOS and Android."
+      content="AI audio courses for kids and adults. Ask mid-lesson. Share with your family. Native on iOS and Android."
     />
     <meta property="og:type" content="website" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -56,8 +56,8 @@
           </p>
           <h1 class="reveal">Listen on the way. Ask when you need to.</h1>
           <p class="lede reveal">
-            Hands-free micro-courses for driving, walking, or transit. Interrupt anytime, get a
-            contextual answer, then fade back into the lesson.
+            AI audio courses for kids and adults. Interrupt anytime for a contextual answer, then
+            fade back into the lesson — and optionally share what you make with your family.
           </p>
           <div class="hero-actions reveal">
             <a class="btn" href="#waitlist">Join the waitlist</a>
@@ -76,19 +76,22 @@
                 <h2 class="app-title">Listen on the way</h2>
                 <div class="chips">
                   <span class="chip selected">All</span>
-                  <span class="chip">Mind</span>
-                  <span class="chip">History</span>
-                  <span class="chip">Work</span>
+                  <span class="chip">Kids</span>
+                  <span class="chip">Adults</span>
                 </div>
                 <article class="course-card accent-rose">
                   <p class="course-kicker">In progress</p>
-                  <h3>History of Rome</h3>
-                  <p class="course-meta">Lesson 1 · 12 min left</p>
+                  <h3>Buddhism</h3>
+                  <p class="course-meta">Lesson 1 · 8 min left</p>
                   <div class="progress"><span style="width: 38%"></span></div>
                 </article>
                 <article class="course-card accent-sky">
-                  <h3>System Design</h3>
+                  <h3>How to speak with confidence</h3>
                   <p class="course-meta">8 chapters · ready to listen</p>
+                </article>
+                <article class="course-card accent-amber">
+                  <h3>Rare earth minerals</h3>
+                  <p class="course-meta">10 chapters · catalog</p>
                 </article>
               </div>
               <div class="home-indicator"></div>
@@ -99,57 +102,48 @@
 
       <section class="stage" id="how" aria-labelledby="stage-title">
         <div class="stage-copy">
-          <p class="kicker">01 — The call</p>
-          <h2 id="stage-title">It rings when you start moving.</h2>
+          <p class="kicker">01 — Our family</p>
+          <h2 id="stage-title">Share courses with people you love.</h2>
           <p>
-            Qamishlo notices a commute — car Bluetooth, walking, transit — and places a native
-            incoming call. Answer from the lock screen or the steering wheel. Background music ducks.
-            Lesson one starts automatically.
+            Create a family circle, invite with a link, and share courses you make. Everyone in the
+            circle sees them — so parents can follow what kids are listening to, and kids can see
+            what you shared back.
           </p>
           <ul class="checklist">
-            <li>CallKit on iOS, ConnectionService on Android</li>
-            <li>Detects in-vehicle and on-foot activity</li>
-            <li>Mutes other media the moment you answer</li>
+            <li>Create or join a circle in a few taps</li>
+            <li>Invite with a link</li>
+            <li>Share a finished course you made</li>
+            <li>React with “Loved it” when something lands</li>
           </ul>
         </div>
 
         <div class="phone-wrap reveal">
-          <div class="phone phone-call" role="img" aria-label="Incoming lesson call from Qamishlo">
+          <div class="phone" role="img" aria-label="Qamishlo Our family screen with shared courses">
             <div class="phone-inner">
-              <div class="app-vista dim"><img src="vista.svg" alt="" /></div>
+              <div class="app-vista"><img src="vista.svg" alt="" /></div>
               <div class="island"></div>
-              <div class="call-screen">
-                <div class="call-rings" aria-hidden="true">
-                  <span></span><span></span><span></span>
+              <div class="status-bar"><span>9:41</span><span>LTE</span></div>
+              <div class="app-screen family-screen">
+                <p class="app-kicker">Circle</p>
+                <h2 class="app-title">Our family</h2>
+                <div class="family-members" aria-hidden="true">
+                  <span class="member-avatar">G</span>
+                  <span class="member-avatar">D</span>
+                  <span class="member-avatar soft">+</span>
                 </div>
-                <p class="call-kicker">Incoming lesson</p>
-                <div class="call-avatar">
-                  <img src="mark.svg" width="64" height="64" alt="" />
-                </div>
-                <h3>Qamishlo</h3>
-                <p class="call-sub">History of Rome · Lesson 1</p>
-                <p class="call-meta">12 min remaining · Hands-free</p>
-                <div class="call-actions">
-                  <button class="call-btn decline" type="button" tabindex="-1" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22">
-                      <path
-                        fill="currentColor"
-                        d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"
-                      />
-                    </svg>
-                    Decline
-                  </button>
-                  <button class="call-btn answer" type="button" tabindex="-1" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" width="22" height="22">
-                      <path
-                        fill="currentColor"
-                        d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"
-                      />
-                    </svg>
-                    Answer
-                  </button>
-                </div>
+                <p class="family-invite">Invite with a link · 3 members</p>
+                <article class="course-card accent-rose compact">
+                  <p class="course-kicker">Shared by Dafna</p>
+                  <h3>Buddhism</h3>
+                  <p class="course-meta">Loved it · 2</p>
+                </article>
+                <article class="course-card accent-sky compact">
+                  <p class="course-kicker">Shared by Gidi</p>
+                  <h3>How to speak with confidence</h3>
+                  <p class="course-meta">Ready for everyone</p>
+                </article>
               </div>
+              <div class="home-indicator"></div>
             </div>
           </div>
         </div>
@@ -160,9 +154,9 @@
           <p class="kicker">02 — The interruption</p>
           <h2>Talk back to the lesson.</h2>
           <p>
-            A large on-screen control — or a hardware trigger — pauses playback, opens a live voice
-            session, and answers with the last minute of transcript plus your profile in context.
-            Then the course resumes with a soft fade-in.
+            Tap the on-screen control to pause playback, ask a question about what you just heard,
+            and get an answer with the recent lesson in context. Then the course resumes with a soft
+            fade-in.
           </p>
         </div>
 
@@ -170,11 +164,11 @@
           <div class="demo-phone">
             <div class="demo-bar">
               <span class="demo-live"></span>
-              History of Rome
+              Buddhism
             </div>
             <p class="demo-lesson" data-lesson>
-              “…by the late Republic, a handful of generals held armies loyal to them, not to the
-              Senate. That shift is the hinge between a civic constitution and personal power.”
+              “…the Four Noble Truths start with a simple observation: life includes dissatisfaction.
+              Not as a verdict — as a map. Once you can name the itch, you can look at what feeds it.”
             </p>
             <div class="wave" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span>
@@ -197,40 +191,40 @@
           <li class="reveal">
             <span class="step-num">01</span>
             <div>
-              <h3>Pick a library hit — or name a topic</h3>
+              <h3>Browse the catalog — or name any topic</h3>
               <p>
-                Browse History, Literature, Computer Science, Science, or Business. Or set a custom
-                subject, depth, commute length, and voice.
+                Start from what’s already loved, or describe a subject and Qamishlo will generate an
+                8–10 chapter AI course. If we already have that topic, we open it instantly.
               </p>
             </div>
           </li>
           <li class="reveal">
             <span class="step-num">02</span>
             <div>
-              <h3>Explain three terms, in your words</h3>
+              <h3>Pick kids or adults</h3>
               <p>
-                No yes/no quiz. A fast grader sets an accurate knowledge baseline so the course meets
-                you where you actually are.
+                Explanations are pitched to the listener’s age — so the same curiosity can land for a
+                child on the drive home or for you on headphones.
               </p>
             </div>
           </li>
           <li class="reveal">
             <span class="step-num">03</span>
             <div>
-              <h3>Listen to lesson one. We prepare two.</h3>
+              <h3>Listen. Catalog is free; generate uses a pack.</h3>
               <p>
-                The syllabus is ready immediately. Only lesson one is voiced up front — the next
-                generates quietly while you listen.
+                Multi-chapter audio with a calm teaching voice. Lesson one starts when ready; the
+                rest prepares while you listen.
               </p>
             </div>
           </li>
           <li class="reveal">
             <span class="step-num">04</span>
             <div>
-              <h3>No signal? We keep the question</h3>
+              <h3>Ask anytime — share when you’re ready</h3>
               <p>
-                Interrupt offline and Qamishlo records locally, then queues the answer for when
-                you’re back online.
+                Interrupt mid-lesson for a contextual answer. When a course you made is finished,
+                share it with your family circle in one tap.
               </p>
             </div>
           </li>
@@ -240,67 +234,53 @@
       <section class="library" id="library">
         <div class="library-head">
           <p class="kicker">04 — The library</p>
-          <h2>Start from what’s already loved — or go custom.</h2>
+          <h2>Age-pitched courses — for kids and adults.</h2>
           <p>
-            Cached courses are sorted by popularity. Choose one and skip generation entirely. Want
-            something that isn’t there? We’ll build it around your commute.
+            Browse what’s already loved, filtered for the listener. Want something that isn’t there?
+            Generate a custom course and optionally share it with your family.
           </p>
         </div>
         <div class="cats">
           <article class="cat accent-rose">
-            <h3>History</h3>
-            <p>History of Rome</p>
-            <p>The Silk Road</p>
-            <p>World War II</p>
-          </article>
-          <article class="cat accent-violet">
-            <h3>Literature</h3>
-            <p>The Iliad</p>
-            <p>Hamlet</p>
-            <p>One Hundred Years of Solitude</p>
+            <h3>Kids</h3>
+            <p>How to speak with confidence</p>
+            <p>Ancient Egypt</p>
+            <p>Dinosaurs</p>
+            <p>Why the sky is blue</p>
+            <p>Volcanoes</p>
           </article>
           <article class="cat accent-sky">
-            <h3>Computer Science</h3>
-            <p>System Design</p>
-            <p>SQL Internals</p>
-            <p>Distributed Systems</p>
-          </article>
-          <article class="cat accent-amber">
-            <h3>Science</h3>
-            <p>Quantum Basics</p>
-            <p>Climate Science</p>
-            <p>Human Evolution</p>
-          </article>
-          <article class="cat accent-mint">
-            <h3>Business</h3>
-            <p>Behavioral Economics</p>
-            <p>Capital Allocation</p>
-            <p>Negotiation</p>
+            <h3>Adults</h3>
+            <p>Buddhism</p>
+            <p>Rare earth minerals</p>
+            <p>CRISPR</p>
+            <p>Attachment styles</p>
+            <p>Deepfakes</p>
           </article>
         </div>
       </section>
 
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>History of Rome</span><span>System Design</span><span>The Iliad</span>
-          <span>Quantum Basics</span><span>Behavioral Economics</span><span>SQL Internals</span>
-          <span>The Silk Road</span><span>Hamlet</span><span>Climate Science</span>
-          <span>History of Rome</span><span>System Design</span><span>The Iliad</span>
-          <span>Quantum Basics</span><span>Behavioral Economics</span><span>SQL Internals</span>
+          <span>Buddhism</span><span>How to speak with confidence</span>
+          <span>Rare earth minerals</span><span>Ancient Egypt</span>
+          <span>Dinosaurs</span><span>Why the sky is blue</span>
+          <span>CRISPR</span><span>Volcanoes</span><span>Deepfakes</span>
+          <span>Buddhism</span><span>How to speak with confidence</span>
+          <span>Rare earth minerals</span><span>Ancient Egypt</span>
+          <span>Dinosaurs</span><span>Why the sky is blue</span>
+          <span>CRISPR</span><span>Volcanoes</span><span>Deepfakes</span>
         </div>
       </div>
 
       <section class="waitlist" id="waitlist">
         <p class="kicker">Early access</p>
-        <h2>Be first in the passenger seat.</h2>
+        <h2>Be first to listen with your family.</h2>
         <p>
-          We’re opening Qamishlo to a small group of commuters. Leave your email and we’ll send a
-          TestFlight / Play invite when your lane is ready.
+          We’re opening Qamishlo to a small group of listeners and households. Leave your email and
+          we’ll send a TestFlight / Play invite when your spot is ready.
         </p>
-        <p class="native-note">
-          Native on iOS &amp; Android — CallKit, ConnectionService, and real car audio, not a
-          wrapper.
-        </p>
+        <p class="native-note">Native on iOS &amp; Android — real audio learning, not a wrapper.</p>
         <form class="waitlist-form" data-waitlist>
           <label class="sr-only" for="email">Email</label>
           <input
@@ -328,7 +308,7 @@
           <span aria-hidden="true">·</span>
           <a href="/terms">Terms</a>
         </p>
-        <p>Hands-free courses for people in motion. © 2026</p>
+        <p>Audio courses you can ask — for kids and adults. © 2026</p>
         <p class="footer-credit">
           created by Gidrono -
           <a href="mailto:gidi@qamishlo.org">gidi@qamishlo.org</a>

@@ -59,19 +59,19 @@ interruptBtn?.addEventListener("click", async () => {
 
   await sleep(700);
   demo.classList.remove("is-listening");
-  addBubble("user", "How is that different from the earlier Republic?");
+  addBubble("user", "Is craving the same thing as wanting something good?");
   interruptLabel.textContent = "Answering…";
 
   await sleep(900);
   addBubble(
     "ai",
-    "Earlier, the Senate advised and magistrates held office for a year. By the late Republic, generals kept armies loyal to them — so power followed people, not the constitution. Want another pass at that?"
+    "Wanting a good meal isn’t the problem — clinging is. Craving is the tightening around the want: the belief that you won’t be okay until it arrives. The teaching asks you to notice that grip."
   );
 
   await sleep(1600);
   interruptLabel.textContent = "Resuming";
   lesson.textContent =
-    "Resuming with a fade-in… “That personal loyalty is why crossing the Rubicon was not just a river. It was a choice about who Rome belonged to.”";
+    "Resuming with a fade-in… “When craving loosens, the truth of the path isn’t abstract. It’s ordinary: less chasing, more clear seeing.”";
 
   await sleep(1400);
   demo.classList.remove("is-paused", "is-listening");
