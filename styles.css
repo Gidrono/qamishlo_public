@@ -223,7 +223,6 @@ main,
 }
 
 .btn:focus-visible,
-.waitlist-form input:focus-visible,
 .interrupt-btn:focus-visible,
 .nav-links a:focus-visible,
 .nav-toggle:focus-visible {
@@ -398,32 +397,59 @@ h2 {
   overflow: hidden;
 }
 
+.home-screen {
+  padding: 10px 14px 6px;
+  mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+}
+
+.home-screen .app-kicker {
+  font-size: 0.62rem;
+}
+
 .home-screen .app-title {
-  margin: 4px 0 10px;
-  font-size: 1.2rem;
+  margin: 2px 0 8px;
+  font-size: 1.05rem;
 }
 
 .home-screen .chips {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  gap: 5px;
+}
+
+.home-screen .chip {
+  padding: 4px 9px;
+  font-size: 0.65rem;
 }
 
 .home-screen .course-card {
-  padding: 10px 12px;
-  margin-bottom: 8px;
-  border-radius: 14px;
+  padding: 7px 10px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  box-shadow: none;
 }
 
 .home-screen .course-card h3 {
-  font-size: 0.88rem;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.home-screen .course-kicker {
+  font-size: 0.58rem;
+  margin-bottom: 2px;
 }
 
 .home-screen .course-meta {
-  font-size: 0.72rem;
+  font-size: 0.64rem;
+  margin-top: 2px;
 }
 
 .home-screen .progress {
-  margin-top: 8px;
-  height: 4px;
+  margin-top: 6px;
+  height: 3px;
+}
+
+.course-card.accent-mint {
+  border-left-color: var(--mint);
 }
 
 .home-indicator {
@@ -550,7 +576,7 @@ h2 {
 .interrupt,
 .steps,
 .library,
-.waitlist {
+.download {
   padding: 10vh 7vw;
 }
 
@@ -565,7 +591,7 @@ h2 {
 .stage-copy p,
 .interrupt-head p,
 .library-head p,
-.waitlist > p {
+.download > p {
   color: var(--muted);
   font-size: 1.08rem;
   max-width: 40rem;
@@ -920,15 +946,15 @@ h2 {
   }
 }
 
-/* Waitlist */
-.waitlist {
+/* Download */
+.download {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.waitlist h2 {
+.download h2 {
   max-width: 14ch;
 }
 
@@ -938,36 +964,56 @@ h2 {
   color: var(--faint) !important;
 }
 
-.waitlist-form {
+.store-buttons {
   display: flex;
-  gap: 10px;
-  width: min(100%, 520px);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
   margin-top: 28px;
 }
 
-.waitlist-form input {
-  flex: 1;
-  min-width: 0;
+.store-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 200px;
   padding: 14px 18px;
-  border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--surface);
-  color: var(--ink);
-  outline: none;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  color: #f4f7f5;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(36, 49, 44, 0.16);
+  opacity: 0.92;
+  cursor: default;
 }
 
-.waitlist-form input:focus {
-  border-color: var(--mint);
+.store-btn:hover {
+  opacity: 1;
 }
 
-.form-note {
-  margin-top: 14px;
-  font-size: 0.9rem;
-  color: var(--muted);
+.store-btn-kicker {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.75;
 }
 
-.form-note.is-ok {
-  color: var(--ok);
+.store-btn-name {
+  margin-top: 2px;
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.store-btn-note {
+  margin-top: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--mint) 70%, #fff);
 }
 
 /* Footer */
@@ -1164,8 +1210,10 @@ h2 {
     grid-template-columns: 40px 1fr;
   }
 
-  .waitlist-form {
+  .store-buttons {
     flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 280px);
   }
 
   .footer {

@@ -1,7 +1,5 @@
 const nav = document.querySelector(".nav");
 const toggle = document.querySelector(".nav-toggle");
-const waitlist = document.querySelector("[data-waitlist]");
-const note = document.querySelector("[data-form-note]");
 const demo = document.querySelector("[data-demo]");
 const interruptBtn = document.querySelector("[data-interrupt]");
 const interruptLabel = document.querySelector("[data-interrupt-label]");
@@ -26,16 +24,6 @@ toggle?.addEventListener("click", () => {
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => nav.classList.remove("is-open"));
-});
-
-waitlist?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const email = new FormData(waitlist).get("email");
-  waitlist.reset();
-  if (note) {
-    note.textContent = `You’re on the list — we’ll write to ${email} when invites open.`;
-    note.classList.add("is-ok");
-  }
 });
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
