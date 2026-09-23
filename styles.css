@@ -538,6 +538,10 @@ button.chip.selected:hover {
   border-left: 4px solid var(--mint);
 }
 
+.course-card[hidden] {
+  display: none !important;
+}
+
 .course-card.accent-rose {
   border-left-color: var(--rose);
 }
