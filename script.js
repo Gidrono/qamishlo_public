@@ -53,13 +53,13 @@ interruptBtn?.addEventListener("click", async () => {
   await sleep(900);
   addBubble(
     "ai",
-    "Great question. Space looks black because there’s almost nothing out there for sunlight to bounce off — no air, no dust cloud around Earth. The Sun lights up planets and moons when its rays hit them. Empty space doesn’t glow back."
+    "Great question. Space looks black because there’s almost nothing out there for sunlight to bounce off - no air, no dust cloud around Earth. The Sun lights up planets and moons when its rays hit them. Empty space doesn’t glow back."
   );
 
   await sleep(1600);
   interruptLabel.textContent = "Resuming";
   lesson.textContent =
-    "Resuming with a fade-in… “So the Goldilocks zone isn’t about looking special from far away — it’s about the right distance for liquid water, and a sky that can hold the light.”";
+    "Resuming with a fade-in… “So the Goldilocks zone isn’t about looking special from far away - it’s about the right distance for liquid water, and a sky that can hold the light.”";
 
   await sleep(1400);
   demo.classList.remove("is-paused", "is-listening");
