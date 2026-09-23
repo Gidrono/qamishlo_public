@@ -317,6 +317,17 @@ h2 {
   font-size: clamp(1.05rem, 1.8vw, 1.22rem);
 }
 
+.hero-sub {
+  margin: 14px 0 0;
+  max-width: 28ch;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1202,6 +1213,10 @@ button.chip.selected:hover {
   }
 
   .lede {
+    margin-inline: auto;
+  }
+
+  .hero-sub {
     margin-inline: auto;
   }
 
