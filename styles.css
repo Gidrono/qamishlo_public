@@ -574,6 +574,8 @@ h2 {
 /* Stage / family */
 .stage,
 .interrupt,
+.trust,
+.for-you,
 .steps,
 .library,
 .download {
@@ -590,11 +592,23 @@ h2 {
 
 .stage-copy p,
 .interrupt-head p,
+.trust-copy p,
+.for-you-copy p,
 .library-head p,
 .download > p {
   color: var(--muted);
   font-size: 1.08rem;
   max-width: 40rem;
+}
+
+.trust-copy,
+.for-you-copy {
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
+.for-you .cats-adult {
+  max-width: 360px;
 }
 
 .checklist {
@@ -955,7 +969,7 @@ h2 {
 }
 
 .download h2 {
-  max-width: 14ch;
+  max-width: 18ch;
 }
 
 .native-note {

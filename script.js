@@ -47,19 +47,19 @@ interruptBtn?.addEventListener("click", async () => {
 
   await sleep(700);
   demo.classList.remove("is-listening");
-  addBubble("user", "Is craving the same thing as wanting something good?");
+  addBubble("user", "Why is space black if the Sun is so bright?");
   interruptLabel.textContent = "Answering…";
 
   await sleep(900);
   addBubble(
     "ai",
-    "Wanting a good meal isn’t the problem — clinging is. Craving is the tightening around the want: the belief that you won’t be okay until it arrives. The teaching asks you to notice that grip."
+    "Great question. Space looks black because there’s almost nothing out there for sunlight to bounce off — no air, no dust cloud around Earth. The Sun lights up planets and moons when its rays hit them. Empty space doesn’t glow back."
   );
 
   await sleep(1600);
   interruptLabel.textContent = "Resuming";
   lesson.textContent =
-    "Resuming with a fade-in… “When craving loosens, the truth of the path isn’t abstract. It’s ordinary: less chasing, more clear seeing.”";
+    "Resuming with a fade-in… “So the Goldilocks zone isn’t about looking special from far away — it’s about the right distance for liquid water, and a sky that can hold the light.”";
 
   await sleep(1400);
   demo.classList.remove("is-paused", "is-listening");
