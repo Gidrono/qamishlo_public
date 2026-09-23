@@ -26,6 +26,55 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => nav.classList.remove("is-open"));
 });
 
+const homePhone = document.querySelector("[data-home-phone]");
+const homeKicker = document.querySelector("[data-home-kicker]");
+const homeChips = document.querySelectorAll("[data-home-filter]");
+const homeCourses = document.querySelectorAll("[data-home-courses] [data-audience]");
+
+const homeLabels = {
+  all: { kicker: "For you", aria: "Qamishlo home screen with mixed courses" },
+  kids: { kicker: "For kids", aria: "Qamishlo home screen with kids courses" },
+  adults: { kicker: "For adults", aria: "Qamishlo home screen with adult courses" },
+};
+
+const setHomeFilter = (filter) => {
+  const label = homeLabels[filter] ?? homeLabels.kids;
+  if (homeKicker) homeKicker.textContent = label.kicker;
+  homePhone?.setAttribute("aria-label", label.aria);
+
+  homeChips.forEach((chip) => {
+    const selected = chip.dataset.homeFilter === filter;
+    chip.classList.toggle("selected", selected);
+    chip.setAttribute("aria-selected", String(selected));
+  });
+
+  if (filter === "all") {
+    let kids = 0;
+    let adults = 0;
+    homeCourses.forEach((card) => {
+      const audience = card.dataset.audience;
+      let visible = false;
+      if (audience === "kids" && kids < 3) {
+        visible = true;
+        kids += 1;
+      } else if (audience === "adults" && adults < 2) {
+        visible = true;
+        adults += 1;
+      }
+      card.hidden = !visible;
+    });
+    return;
+  }
+
+  homeCourses.forEach((card) => {
+    card.hidden = card.dataset.audience !== filter;
+  });
+};
+
+homeChips.forEach((chip) => {
+  chip.addEventListener("click", () => setHomeFilter(chip.dataset.homeFilter));
+});
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const addBubble = (role, text) => {

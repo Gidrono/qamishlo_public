@@ -73,43 +73,85 @@
           </div>
         </div>
 
-        <div class="hero-phone reveal" aria-hidden="false">
-          <div class="phone" role="img" aria-label="Qamishlo home screen with kids courses">
+        <div class="hero-phone reveal">
+          <div class="phone" data-home-phone aria-label="Qamishlo home screen with kids courses">
             <div class="phone-inner">
               <div class="app-vista"><img src="vista.svg" alt="" /></div>
               <div class="island"></div>
               <div class="status-bar"><span>9:41</span><span>LTE</span></div>
               <div class="app-screen home-screen">
-                <p class="app-kicker">For kids</p>
+                <p class="app-kicker" data-home-kicker>For kids</p>
                 <h2 class="app-title">Learn every day</h2>
-                <div class="chips">
-                  <span class="chip">All</span>
-                  <span class="chip selected">Kids</span>
-                  <span class="chip">Adults</span>
+                <div class="chips" role="tablist" aria-label="Course audience">
+                  <button type="button" class="chip" role="tab" data-home-filter="all" aria-selected="false">
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    class="chip selected"
+                    role="tab"
+                    data-home-filter="kids"
+                    aria-selected="true"
+                  >
+                    Kids
+                  </button>
+                  <button
+                    type="button"
+                    class="chip"
+                    role="tab"
+                    data-home-filter="adults"
+                    aria-selected="false"
+                  >
+                    Adults
+                  </button>
                 </div>
-                <article class="course-card accent-rose">
-                  <p class="course-kicker">In progress</p>
-                  <h3>Ancient Egypt</h3>
-                  <p class="course-meta">Lesson 2 · 6 min left</p>
-                  <div class="progress"><span style="width: 42%"></span></div>
-                </article>
-                <article class="course-card accent-sky">
-                  <h3>The solar system</h3>
-                  <p class="course-meta">8 chapters · ready to listen</p>
-                </article>
-                <article class="course-card accent-amber">
-                  <h3>How electricity works</h3>
-                  <p class="course-meta">9 chapters · catalog</p>
-                </article>
-                <article class="course-card accent-violet">
-                  <h3>How to speak with confidence</h3>
-                  <p class="course-meta">8 chapters · ready to listen</p>
-                </article>
-                <article class="course-card accent-mint">
-                  <p class="course-kicker">Shared by Dad</p>
-                  <h3>The human body</h3>
-                  <p class="course-meta">10 chapters · family</p>
-                </article>
+                <div class="home-courses" data-home-courses>
+                  <article class="course-card accent-rose" data-audience="kids">
+                    <p class="course-kicker">In progress</p>
+                    <h3>Ancient Egypt</h3>
+                    <p class="course-meta">Lesson 2 · 6 min left</p>
+                    <div class="progress"><span style="width: 42%"></span></div>
+                  </article>
+                  <article class="course-card accent-sky" data-audience="kids">
+                    <h3>The solar system</h3>
+                    <p class="course-meta">8 chapters · ready to listen</p>
+                  </article>
+                  <article class="course-card accent-amber" data-audience="kids">
+                    <h3>How electricity works</h3>
+                    <p class="course-meta">9 chapters · catalog</p>
+                  </article>
+                  <article class="course-card accent-violet" data-audience="kids">
+                    <h3>How to speak with confidence</h3>
+                    <p class="course-meta">8 chapters · ready to listen</p>
+                  </article>
+                  <article class="course-card accent-mint" data-audience="kids">
+                    <p class="course-kicker">Shared by Dad</p>
+                    <h3>The human body</h3>
+                    <p class="course-meta">10 chapters · family</p>
+                  </article>
+                  <article class="course-card accent-rose" data-audience="adults" hidden>
+                    <p class="course-kicker">In progress</p>
+                    <h3>Buddhism</h3>
+                    <p class="course-meta">Lesson 1 · 8 min left</p>
+                    <div class="progress"><span style="width: 38%"></span></div>
+                  </article>
+                  <article class="course-card accent-sky" data-audience="adults" hidden>
+                    <h3>System Design</h3>
+                    <p class="course-meta">8 chapters · ready to listen</p>
+                  </article>
+                  <article class="course-card accent-amber" data-audience="adults" hidden>
+                    <h3>Getting promoted</h3>
+                    <p class="course-meta">7 chapters · catalog</p>
+                  </article>
+                  <article class="course-card accent-violet" data-audience="adults" hidden>
+                    <h3>History of Rome</h3>
+                    <p class="course-meta">12 chapters · ready to listen</p>
+                  </article>
+                  <article class="course-card accent-mint" data-audience="adults" hidden>
+                    <h3>Rare earth minerals</h3>
+                    <p class="course-meta">10 chapters · catalog</p>
+                  </article>
+                </div>
               </div>
               <div class="home-indicator"></div>
             </div>
@@ -214,10 +256,10 @@
           <article class="cat accent-violet">
             <h3>Adults</h3>
             <p>Buddhism</p>
-            <p>Rare earth minerals</p>
-            <p>History of Rome</p>
             <p>System Design</p>
-            <p>CRISPR</p>
+            <p>Getting promoted</p>
+            <p>History of Rome</p>
+            <p>Rare earth minerals</p>
           </article>
         </div>
       </section>
