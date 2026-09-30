@@ -3,29 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Qamishlo - Learn something new every day.</title>
+    <title>Qamishlo · Type a word. Get a short audio course.</title>
     <meta
       name="description"
-      content="One app for curious kids and curious parents. Age-pitched AI audio courses - history, science, and skills they can ask about mid-lesson. Share with your family."
+      content="Type a topic, get an 8–10 chapter AI-narrated audio course pitched to age. Listen on the train, in the car, or on a walk. Pause and ask questions by voice. Free to listen."
     />
     <meta name="theme-color" content="#e8eee9" />
-    <meta property="og:title" content="Qamishlo - Learn something new every day." />
+    <meta property="og:title" content="Qamishlo · Type a word. Get a short audio course." />
     <meta
       property="og:description"
-      content="One app for curious kids and curious parents. High quality AI audio courses pitched to their age - ask why anytime, share with your family."
+      content="Zero-effort audio courses for commutes, drives and walks. Type a word, listen on the way, ask questions out loud. For families and adults."
     />
     <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://qamishlo.org/" />
     <link rel="icon" href="favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!--
+      PRIVACY: no third-party scripts, pixels, analytics, or web fonts.
+      Fonts are self-hosted (Fraunces + Plus Jakarta Sans, SIL OFL) from ./fonts/
+    -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip" href="#top">Skip to content</a>
     <div class="world" aria-hidden="true">
       <img class="world-svg" src="vista.svg" alt="" />
       <div class="mist"></div>
@@ -38,10 +38,12 @@
         <span class="logo-word">Qamishlo</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#ask">Ask why</a>
-        <a href="#trust">For parents</a>
-        <a href="#family">Family</a>
-        <a class="btn btn-sm" href="#download">Get the app</a>
+        <a href="#how">How it works</a>
+        <a href="#listen">Listen</a>
+        <a href="#safety">Safety</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn btn-sm" href="#waitlist">Join the waitlist</a>
       </nav>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span>
@@ -55,113 +57,53 @@
             <img class="brand-mark" src="mark.png" width="56" height="56" alt="" />
             <span class="brand-name">Qamishlo</span>
           </p>
-          <h1 class="reveal">Learn something new every day.</h1>
-          <p class="hero-sub reveal">One app for curious kids and curious parents.</p>
+          <p class="eyebrow reveal">Audio courses for the commute · the drive · the walk</p>
+          <h1 class="reveal">Type a word. Get a short audio course. Listen on the way.</h1>
           <p class="lede reveal">
-            High quality AI audio courses pitched to their age - history, science, and skills they
-            can interrupt anytime to ask why. You see what they’re learning. You might end up
-            listening too.
+            No setup. No screen. Pick any topic — sharks, black holes, Ancient Egypt — and Qamishlo
+            writes and narrates an 8–10 chapter series pitched to age. Pause anytime and ask a
+            question out loud. Built for headphones on the train, and for families in the car.
           </p>
           <div class="hero-actions reveal">
-            <a class="btn" href="#download">Get the app</a>
-            <a class="btn btn-ghost" href="#ask">Hear them ask why</a>
+            <a class="btn" href="#waitlist">Join the waitlist</a>
+            <a class="btn btn-ghost" href="#listen">Hear a sample</a>
           </div>
+          <!--
+            TODO(Gidi): store links. When App Store / Google Play listings are live, set real hrefs
+            on the store buttons in #download / #waitlist and remove aria-disabled + "coming soon".
+            Use official badge artwork from Apple and Google marketing guidelines.
+          -->
+          <p class="fine reveal">Free to listen. No ads. Coming soon on iPhone and Android.</p>
         </div>
 
-        <div class="hero-phone reveal">
-          <div class="phone" data-home-phone aria-label="Qamishlo home screen with kids courses">
-            <div class="phone-inner">
-              <div class="app-vista"><img src="vista.svg" alt="" /></div>
-              <div class="island"></div>
-              <div class="status-bar"><span>9:41</span><span>LTE</span></div>
-              <div class="app-screen home-screen">
-                <p class="app-kicker" data-home-kicker>For kids</p>
-                <h2 class="app-title">Learn every day</h2>
-                <div class="chips" role="tablist" aria-label="Course audience">
-                  <button type="button" class="chip" role="tab" data-home-filter="all" aria-selected="false">
-                    All
-                  </button>
-                  <button
-                    type="button"
-                    class="chip selected"
-                    role="tab"
-                    data-home-filter="kids"
-                    aria-selected="true"
-                  >
-                    Kids
-                  </button>
-                  <button
-                    type="button"
-                    class="chip"
-                    role="tab"
-                    data-home-filter="adults"
-                    aria-selected="false"
-                  >
-                    Adults
-                  </button>
-                </div>
-                <div class="home-courses" data-home-courses>
-                  <article class="course-card accent-rose" data-audience="kids">
-                    <p class="course-kicker">In progress</p>
-                    <h3>Ancient Egypt</h3>
-                    <p class="course-meta">Lesson 2 · 6 min left</p>
-                    <div class="progress"><span style="width: 42%"></span></div>
-                  </article>
-                  <article class="course-card accent-sky" data-audience="kids">
-                    <h3>The solar system</h3>
-                    <p class="course-meta">8 chapters · ready to listen</p>
-                  </article>
-                  <article class="course-card accent-amber" data-audience="kids">
-                    <h3>How electricity works</h3>
-                    <p class="course-meta">9 chapters · catalog</p>
-                  </article>
-                  <article class="course-card accent-violet" data-audience="kids">
-                    <h3>How to speak with confidence</h3>
-                    <p class="course-meta">8 chapters · ready to listen</p>
-                  </article>
-                  <article class="course-card accent-mint" data-audience="kids">
-                    <p class="course-kicker">Shared by Dad</p>
-                    <h3>The human body</h3>
-                    <p class="course-meta">10 chapters · family</p>
-                  </article>
-                  <article class="course-card accent-rose" data-audience="adults" hidden>
-                    <p class="course-kicker">In progress</p>
-                    <h3>Buddhism</h3>
-                    <p class="course-meta">Lesson 1 · 8 min left</p>
-                    <div class="progress"><span style="width: 38%"></span></div>
-                  </article>
-                  <article class="course-card accent-sky" data-audience="adults" hidden>
-                    <h3>System Design</h3>
-                    <p class="course-meta">8 chapters · ready to listen</p>
-                  </article>
-                  <article class="course-card accent-amber" data-audience="adults" hidden>
-                    <h3>Getting promoted</h3>
-                    <p class="course-meta">7 chapters · catalog</p>
-                  </article>
-                  <article class="course-card accent-violet" data-audience="adults" hidden>
-                    <h3>History of Rome</h3>
-                    <p class="course-meta">12 chapters · ready to listen</p>
-                  </article>
-                  <article class="course-card accent-mint" data-audience="adults" hidden>
-                    <h3>Rare earth minerals</h3>
-                    <p class="course-meta">10 chapters · catalog</p>
-                  </article>
-                </div>
-              </div>
-              <div class="home-indicator"></div>
+        <div class="hero-demo reveal" aria-label="Example: typing a topic into a course">
+          <div class="type-card" data-type-demo>
+            <p class="type-label">You type</p>
+            <div class="type-input" aria-live="polite">
+              <span class="type-word" data-type-word>volcanoes</span><span class="type-caret" aria-hidden="true"></span>
             </div>
+            <p class="type-arrow" aria-hidden="true">↓</p>
+            <p class="type-label">You get</p>
+            <ul class="type-chapters" data-type-chapters>
+              <li><span>Ch 1</span> What’s really going on under our feet</li>
+              <li><span>Ch 2</span> Magma, pressure, and the pop</li>
+              <li><span>Ch 3</span> Why some volcanoes sleep for centuries</li>
+              <li><span>Ch 4</span> Living near a mountain that breathes</li>
+              <li class="type-more">+ 4 more chapters · ages 5–9</li>
+            </ul>
+            <p class="type-hint">Then listen on the lock screen — offline when you need it.</p>
           </div>
         </div>
       </section>
 
       <section class="interrupt" id="ask">
         <div class="interrupt-head">
-          <p class="kicker">01 - Ask why</p>
-          <h2>Their questions deserve better answers.</h2>
+          <p class="kicker">Ask on the way</p>
+          <h2>Interrupt the audio. Ask out loud. Keep going.</h2>
           <p>
-            Mid-lesson, they can pause and ask about what they just heard. Qamishlo answers with the
-            recent lesson in context - then fades back in. No screens. No searching for the right
-            YouTube video at bedtime.
+            Mid-chapter, hold to ask about what you just heard. Qamishlo answers with the lesson in
+            context — then fades back in. Hands-free for the drive. No searching for a video at a
+            red light.
           </p>
         </div>
 
@@ -169,12 +111,12 @@
           <div class="demo-phone">
             <div class="demo-bar">
               <span class="demo-live"></span>
-              The solar system
+              Why volcanoes erupt
             </div>
             <p class="demo-lesson" data-lesson>
-              “…Earth isn’t special because it’s in the middle - it’s special because it’s in the
-              Goldilocks zone: not too hot, not too cold, with liquid water. Venus is closer to the
-              Sun. Mars is farther. We’re the one that fits.”
+              “…Earth isn’t a solid rock all the way through. Deep under your feet, rock can get hot
+              enough to soften. When that melt finds a weak spot, it pushes up — and that’s how a
+              volcano starts to wake.”
             </p>
             <div class="wave" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span>
@@ -185,94 +127,196 @@
             <button class="interrupt-btn" type="button" data-interrupt>
               <span data-interrupt-label>Hold to ask</span>
             </button>
-            <p class="demo-hint">Try asking why - no signup required</p>
+            <p class="demo-hint">Try it — no signup required</p>
           </div>
         </div>
       </section>
 
-      <section class="trust" id="trust" aria-labelledby="trust-title">
+      <section class="steps" id="how">
+        <p class="kicker">How it works</p>
+        <h2>Three steps from a word to “one more chapter”</h2>
+        <ol class="step-list">
+          <li class="reveal">
+            <span class="step-num">01</span>
+            <div>
+              <h3>Type a topic — or browse the free library</h3>
+              <p>
+                One word is enough: sharks, castles, how planes stay up. Or open a course that’s
+                already in the catalog.
+              </p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="step-num">02</span>
+            <div>
+              <h3>Get a course pitched to the listener’s age</h3>
+              <p>
+                Qamishlo writes and narrates an 8–10 chapter series with short recaps and a gentle
+                “what happens next?” at the end of each one. Same curiosity, different vocabulary
+                for 5–9, 10–14, or 15+.
+              </p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="step-num">03</span>
+            <div>
+              <h3>Listen — and ask anything</h3>
+              <p>
+                Play on the lock screen, in the car, or downloaded for offline. Pause and ask by
+                voice; the answer fits the lesson, then the story picks back up.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="ages" id="ages" aria-labelledby="ages-title">
+        <div class="ages-head">
+          <p class="kicker">Age bands</p>
+          <h2 id="ages-title">The same curiosity, explained three ways</h2>
+          <p>
+            Every course is written for one age band — vocabulary, pacing, and safety rules included.
+            Rome for them, Rome for you, then talk about it on the drive home.
+          </p>
+        </div>
+        <div class="bands">
+          <article class="band">
+            <p class="band-age">5–9</p>
+            <h3>Little explorers</h3>
+            <p>
+              Warm and clear, like a curious older friend telling a real story. Short sentences, one
+              picture at a time. New words explained right away. No baby talk.
+            </p>
+          </article>
+          <article class="band">
+            <p class="band-age">10–14</p>
+            <h3>Big questions</h3>
+            <p>
+              Sharp and respectful. Real terms, cause and effect, thought experiments that make
+              ideas click. Never talked down to. History without graphic detail.
+            </p>
+          </article>
+          <article class="band">
+            <p class="band-age">15+</p>
+            <h3>And one for you</h3>
+            <p>
+              Grown-up courses for your commute or a walk: history, psychology, money, and more. Same
+              stop-and-ask flow. Share with your family circle when you want.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="samples-section" id="listen" aria-labelledby="listen-title">
+        <div class="samples-head">
+          <p class="kicker">Press play</p>
+          <h2 id="listen-title">Hear how it sounds</h2>
+          <p>
+            A minute or two from chapter one of courses in the free library. Titles come straight
+            from the catalog.
+          </p>
+        </div>
+        <!--
+          TODO(Gidi): audio samples.
+          1. Export ~90–120 s from lesson 1 of each catalog course (trim with ffmpeg if needed).
+          2. Drop files into ./samples/ with the exact names below.
+          3. Confirm each course is live in the catalog and listen through before publishing.
+          4. Confirm the TTS provider’s terms allow marketing use of generated audio.
+          Keep preload="none" so nothing downloads until someone taps play.
+          TODO(Gidi): replace the chapter blurbs with each course’s real lesson-1 objective.
+        -->
+        <div class="samples">
+          <article class="sample">
+            <div class="sample-head">
+              <span class="tag">Ages 5–9</span>
+              <h3>Why volcanoes erupt</h3>
+            </div>
+            <p>Chapter 1: what’s really going on under our feet.</p>
+            <audio controls preload="none" aria-label="Sample: Why volcanoes erupt, chapter 1">
+              <source src="./samples/why-volcanoes-erupt.mp3" type="audio/mpeg" />
+            </audio>
+          </article>
+          <article class="sample">
+            <div class="sample-head">
+              <span class="tag">Ages 5–9</span>
+              <h3>How the Moon changes shape</h3>
+            </div>
+            <p>Chapter 1: the Moon isn’t shrinking. So what is it doing?</p>
+            <audio controls preload="none" aria-label="Sample: How the Moon changes shape, chapter 1">
+              <source src="./samples/how-the-moon-changes-shape.mp3" type="audio/mpeg" />
+            </audio>
+          </article>
+          <article class="sample">
+            <div class="sample-head">
+              <span class="tag">Ages 5–9</span>
+              <h3>Ancient Egypt</h3>
+            </div>
+            <p>Chapter 1: a river, a desert, and a very long time ago.</p>
+            <audio controls preload="none" aria-label="Sample: Ancient Egypt, chapter 1">
+              <source src="./samples/ancient-egypt.mp3" type="audio/mpeg" />
+            </audio>
+          </article>
+          <article class="sample">
+            <div class="sample-head">
+              <span class="tag tag-teen">Ages 10–14</span>
+              <h3>How black holes work</h3>
+            </div>
+            <p>Chapter 1: what happens when gravity wins.</p>
+            <audio controls preload="none" aria-label="Sample: How black holes work, chapter 1">
+              <source src="./samples/how-black-holes-work.mp3" type="audio/mpeg" />
+            </audio>
+          </article>
+        </div>
+        <p class="ai-note">
+          Courses are written and narrated by AI, then checked by automatic safety rules. Like any
+          AI, it can occasionally get a detail wrong.
+        </p>
+      </section>
+
+      <section class="trust" id="safety" aria-labelledby="trust-title">
         <div class="trust-copy">
-          <p class="kicker">02 - For parents</p>
-          <h2 id="trust-title">You’ll see what they’re learning.</h2>
+          <p class="kicker">For parents</p>
+          <h2 id="trust-title">Built for listening together, with you in charge</h2>
           <p>
-            Courses are pitched to their age - explanations that fit a child on the drive home, not
-            a lecture meant for adults. Join the family circle and follow what they listen to, react
-            when something lands, and share courses back.
+            Accounts are for grown-ups. Kids listen on your phone or tablet. Here’s what is true in
+            the product today.
           </p>
+          <!--
+            KEEP THESE CLAIMS TRUE. Only list behaviours that ship today.
+            TODO(Gidi): add only once they ship (see kids-compliance-checklist):
+              - Grown-up check before purchases, sharing and links (parent gate)
+              - Report anything that feels off, right from the player
+              - Community sharing is off until you turn it on
+              - Delete your account and data from Settings
+          -->
           <ul class="checklist">
-            <li>Age-pitched kids mode - not a watered-down adult course</li>
-            <li>Screen-free audio - learning without another glowing rectangle</li>
-            <li>See shared courses in your family circle</li>
-            <li>History, science, and skills that map to what school covers</li>
+            <li>Your account, your device — no separate kid email or profile required</li>
+            <li>No ads. No third-party advertising or analytics SDKs in the apps</li>
+            <li>Voice questions aren’t kept — audio is transcribed, then deleted</li>
+            <li>Age bands with their own vocabulary, pacing and safety writing rules</li>
+            <li>Honest about AI — great for curiosity, not a replacement for school</li>
           </ul>
-        </div>
-      </section>
-
-      <section class="library" id="library">
-        <div class="library-head">
-          <p class="kicker">03 - What they listen to</p>
-          <h2>History, science, and skills - explained so they stick.</h2>
-          <p>
-            Browse what’s already loved, filtered for kids. Want something that isn’t there? Generate
-            a custom course pitched to their age.
+          <p class="fine trust-fine">
+            Spot something off? Email
+            <a href="mailto:support@qamishlo.org">support@qamishlo.org</a>.
           </p>
-        </div>
-        <div class="cats">
-          <article class="cat accent-rose">
-            <h3>Kids</h3>
-            <p>Ancient Egypt</p>
-            <p>The solar system</p>
-            <p>How electricity works</p>
-            <p>The human body</p>
-            <p>How to speak with confidence</p>
-          </article>
-          <article class="cat accent-sky">
-            <h3>Also in the catalog</h3>
-            <p>The water cycle</p>
-            <p>How maps work</p>
-            <p>Ancient Rome</p>
-            <p>Climate &amp; weather</p>
-            <p>Stories that built the world</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="for-you" id="for-you" aria-labelledby="for-you-title">
-        <div class="for-you-copy">
-          <p class="kicker">04 - And one for you</p>
-          <h2 id="for-you-title">Kids become curious when they see curious parents.</h2>
-          <p>
-            Raise a learner - be one too. The same app has adult courses for your commute or evening
-            headphones. Same interrupt-to-ask flow. Same family circle when you want to share what
-            you made.
-          </p>
-        </div>
-        <div class="cats cats-adult">
-          <article class="cat accent-violet">
-            <h3>Adults</h3>
-            <p>Buddhism</p>
-            <p>System Design</p>
-            <p>Getting promoted</p>
-            <p>History of Rome</p>
-            <p>Rare earth minerals</p>
-          </article>
         </div>
       </section>
 
       <section class="stage" id="family" aria-labelledby="stage-title">
         <div class="stage-copy">
-          <p class="kicker">05 - Learn together</p>
+          <p class="kicker">Family circle</p>
           <h2 id="stage-title">Same curiosity. Different ages.</h2>
           <p>
             Create a family circle, invite with a link, and share courses. Parents see what kids are
-            into. Kids see what you shared back. Same topic at two levels - Rome for them, Rome for
-            you - then talk about it on the drive or at dinner.
+            into. Kids see what you shared back. Same topic at two levels — then talk about it on
+            the drive or at dinner.
           </p>
           <ul class="checklist">
             <li>Create or join a circle in a few taps</li>
             <li>Invite with a link</li>
             <li>Share a finished course you made</li>
-            <li>React with “Loved it” when something lands</li>
+            <li>React when something lands</li>
           </ul>
         </div>
 
@@ -298,7 +342,7 @@
                 </article>
                 <article class="course-card accent-sky compact">
                   <p class="course-kicker">Shared by Gidi</p>
-                  <h3>The solar system</h3>
+                  <h3>Why volcanoes erupt</h3>
                   <p class="course-meta">Ready for everyone</p>
                 </article>
               </div>
@@ -308,100 +352,223 @@
         </div>
       </section>
 
-      <section class="steps" id="how">
-        <p class="kicker">06 - How a course is born</p>
-        <h2>From curiosity to lesson one, then the rest in the background.</h2>
-        <ol class="step-list">
-          <li class="reveal">
-            <span class="step-num">01</span>
-            <div>
-              <h3>Browse the catalog - or name any topic</h3>
-              <p>
-                Start from what’s already loved, or describe a subject and Qamishlo will generate an
-                8-10 chapter high quality AI course. If we already have that topic, we open it
-                instantly.
-              </p>
+      <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="pricing-head">
+          <p class="kicker">Pricing</p>
+          <h2 id="pricing-title">Listening is free. Pay only for new courses.</h2>
+          <p>
+            The whole library is free to listen to. A Family plan gives you new custom courses every
+            month. Need extras? Top up without a subscription.
+          </p>
+        </div>
+        <!--
+          TODO(Gidi): confirm final SKUs/prices in Play Console + App Store Connect before launch.
+          If you add a 7-day free trial on annual, mention it on the Family card.
+          If family sharing has a member cap, state it on the Family card.
+        -->
+        <div class="plans">
+          <article class="plan">
+            <h3>Free</h3>
+            <p class="price">$0</p>
+            <p class="plan-note">To get started</p>
+            <ul>
+              <li>Unlimited listening to the free library</li>
+              <li>Courses shared by your family circle</li>
+              <li><strong>1 free custom course</strong> on any topic</li>
+              <li>Ask questions mid-lesson</li>
+            </ul>
+          </article>
+          <article class="plan plan-featured">
+            <p class="plan-ribbon">Best for families</p>
+            <h3>Family</h3>
+            <p class="price">$9.99 <small>/ month</small></p>
+            <p class="plan-note">or $79.99 / year (about $6.67 a month)</p>
+            <ul>
+              <li><strong>4 new custom courses every month</strong></li>
+              <li>Share them with your family circle</li>
+              <li>Unlimited listening and questions</li>
+              <li>Cancel anytime in your app store account</li>
+            </ul>
+          </article>
+          <article class="plan">
+            <h3>Top-ups</h3>
+            <p class="plan-note">Need an extra course? No subscription required.</p>
+            <div class="topups">
+              <div class="topup"><span>1 course</span><strong>$2.99</strong></div>
+              <div class="topup"><span>5 courses</span><strong>$9.99</strong></div>
             </div>
-          </li>
-          <li class="reveal">
-            <span class="step-num">02</span>
-            <div>
-              <h3>Pitched to their age</h3>
-              <p>
-                Pick kids or adults. Explanations fit the listener - so the same curiosity can land
-                for a child on the drive home or for you on headphones.
-              </p>
-            </div>
-          </li>
-          <li class="reveal">
-            <span class="step-num">03</span>
-            <div>
-              <h3>Listen. Catalog is free; generate uses a pack.</h3>
-              <p>
-                Multi-chapter audio with a calm teaching voice. Lesson one starts when ready; the
-                rest prepares while you listen.
-              </p>
-            </div>
-          </li>
-          <li class="reveal">
-            <span class="step-num">04</span>
-            <div>
-              <h3>Ask anytime - share when you’re ready</h3>
-              <p>
-                Interrupt mid-lesson for a contextual answer. When a course you made is finished,
-                share it with your family circle in one tap.
-              </p>
-            </div>
-          </li>
-        </ol>
+            <ul>
+              <li>Course credits never expire</li>
+              <li>Works with or without a plan</li>
+            </ul>
+          </article>
+        </div>
+        <p class="price-note">
+          Prices in US dollars. Final prices are set in the App Store and Google Play and may vary by
+          country and include local taxes. Subscriptions renew automatically until cancelled.
+        </p>
+      </section>
+
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <p class="kicker">Questions</p>
+        <h2 id="faq-title">People usually ask</h2>
+        <div class="faq">
+          <details>
+            <summary>What ages is Qamishlo for?</summary>
+            <p>
+              Courses come in three bands: about 5–9, 10–14, and 15+ (that’s you). It works for
+              curious kids listening with a parent nearby, and for adults on a commute or walk.
+            </p>
+          </details>
+          <details>
+            <summary>Does my child need their own account?</summary>
+            <p>
+              No. The account belongs to you. They listen on your device, and you choose the age band
+              for what they hear.
+            </p>
+          </details>
+          <details>
+            <summary>How is this different from a study app with quizzes?</summary>
+            <p>
+              Qamishlo is audio-first and zero-setup: type a word, get a short multi-chapter course,
+              listen on the way. There are no quizzes or flashcards. The point is a calm series you
+              can interrupt by voice — for the car, train or walk.
+            </p>
+          </details>
+          <details>
+            <summary>Is the content safe and accurate?</summary>
+            <p>
+              Age bands have their own writing rules, and topics are screened before a course is
+              made. Everything is AI-written, so it can occasionally get something wrong. Listen
+              together when you can, and tell us if anything seems off.
+            </p>
+          </details>
+          <details>
+            <summary>How do voice questions work?</summary>
+            <p>
+              Pause the lesson and ask out loud (or type). Qamishlo answers briefly using the lesson
+              you’re hearing, then goes back to the story. The voice recording is deleted after it’s
+              turned into text.
+            </p>
+          </details>
+          <details>
+            <summary>How long is a course?</summary>
+            <p>
+              Most courses have 8–10 chapters of about 8 minutes each — one chapter per car ride or
+              commute.
+            </p>
+          </details>
+          <details>
+            <summary>Does it work offline?</summary>
+            <p>
+              Yes. Download chapters ahead of time and listen with no signal. Asking new questions
+              needs a connection; offline questions are sent when you’re back online.
+            </p>
+          </details>
+          <details>
+            <summary>Which languages?</summary>
+            <p>
+              Courses can be made in English, Spanish, French, German and Portuguese. The app itself
+              is in English for now.
+            </p>
+          </details>
+          <details>
+            <summary>Is there a screen to stare at?</summary>
+            <p>
+              Barely. Qamishlo is audio-first: start a chapter and put the phone away. It plays from
+              the lock screen like a podcast.
+            </p>
+          </details>
+          <details>
+            <summary>How do I cancel?</summary>
+            <p>
+              Subscriptions are handled by the App Store or Google Play. Cancel anytime in your store
+              account settings; you keep access until the end of the period you paid for.
+            </p>
+          </details>
+          <details>
+            <summary>When can we get it?</summary>
+            <p>
+              Qamishlo is in testing on iPhone and Android. Join the waitlist and we’ll email you when
+              it’s in the stores.
+            </p>
+          </details>
+        </div>
       </section>
 
       <div class="marquee" aria-hidden="true">
         <div class="marquee-track">
-          <span>Ancient Egypt</span><span>The solar system</span>
-          <span>How electricity works</span><span>The human body</span>
-          <span>How to speak with confidence</span><span>Buddhism</span>
-          <span>History of Rome</span><span>The water cycle</span>
-          <span>Ancient Egypt</span><span>The solar system</span>
-          <span>How electricity works</span><span>The human body</span>
-          <span>How to speak with confidence</span><span>Buddhism</span>
-          <span>History of Rome</span><span>The water cycle</span>
+          <span>volcanoes</span><span>black holes</span>
+          <span>Ancient Egypt</span><span>the Moon</span>
+          <span>sharks</span><span>how planes stay up</span>
+          <span>History of Rome</span><span>negotiation</span>
+          <span>volcanoes</span><span>black holes</span>
+          <span>Ancient Egypt</span><span>the Moon</span>
+          <span>sharks</span><span>how planes stay up</span>
+          <span>History of Rome</span><span>negotiation</span>
         </div>
       </div>
 
-      <section class="download" id="download">
-        <p class="kicker">Get the app</p>
-        <h2>Learning for them. Curiosity for you.</h2>
-        <p>
-          High quality AI audio courses on iPhone and Android - for kids, parents, and the whole
-          family circle. Store links coming soon - drop these in when App Store and Google Play are
-          live.
-        </p>
-        <div class="store-buttons">
-          <a
-            class="store-btn"
-            href="#"
-            aria-disabled="true"
-            data-store-placeholder="app-store"
-            onclick="return false;"
-          >
-            <span class="store-btn-kicker">Download on the</span>
-            <span class="store-btn-name">App Store</span>
-            <span class="store-btn-note">Link coming soon</span>
-          </a>
-          <a
-            class="store-btn"
-            href="#"
-            aria-disabled="true"
-            data-store-placeholder="google-play"
-            onclick="return false;"
-          >
-            <span class="store-btn-kicker">Get it on</span>
-            <span class="store-btn-name">Google Play</span>
-            <span class="store-btn-note">Link coming soon</span>
-          </a>
+      <section class="waitlist" id="waitlist" aria-labelledby="wl-title">
+        <div class="wl-card">
+          <p class="kicker">Waitlist</p>
+          <h2 id="wl-title">Be first in line</h2>
+          <p>
+            We’ll email you when Qamishlo is in the App Store and Google Play. Nothing else unless
+            you ask for it.
+          </p>
+          <!--
+            TODO(Gidi): waitlist form endpoint. Replace YOUR_FORM_ID with a real Formspree form id
+            (or switch to Tally / Buttondown). Turn on DOUBLE OPT-IN. Collect parent/adult email only.
+            Optionally set _next to a thank-you URL once that page exists.
+          -->
+          <form class="wl-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="wl-row">
+              <label class="sr-only" for="email">Your email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+                placeholder="you@example.com"
+              />
+              <button class="btn" type="submit">Join the waitlist</button>
+            </div>
+            <label class="check">
+              <input type="checkbox" name="consent" value="yes" required />
+              <span>
+                I’m 18 or over and I’d like emails about Qamishlo’s launch. I can unsubscribe anytime.
+                See our <a href="/privacy">Privacy Policy</a>.
+              </span>
+            </label>
+            <input type="hidden" name="_subject" value="Qamishlo waitlist signup" />
+            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          </form>
+
+          <div class="store-buttons" id="download">
+            <!-- TODO(Gidi): replace placeholders with live store URLs + official badges -->
+            <a
+              class="store-btn"
+              href="#waitlist"
+              aria-disabled="true"
+              data-store-placeholder="app-store"
+            >
+              <span class="store-btn-kicker">Coming soon on the</span>
+              <span class="store-btn-name">App Store</span>
+            </a>
+            <a
+              class="store-btn"
+              href="#waitlist"
+              aria-disabled="true"
+              data-store-placeholder="google-play"
+            >
+              <span class="store-btn-kicker">Coming soon on</span>
+              <span class="store-btn-name">Google Play</span>
+            </a>
+          </div>
+          <p class="native-note">Native on iOS &amp; Android — lock-screen player, offline downloads.</p>
         </div>
-        <p class="native-note">Native on iOS &amp; Android - real audio learning, not a wrapper.</p>
       </section>
     </main>
 
@@ -415,11 +582,14 @@
           <a href="/privacy">Privacy</a>
           <span aria-hidden="true">·</span>
           <a href="/terms">Terms</a>
+          <!-- TODO(Gidi): point Beta testers at the real invite / TestFlight / Play testing flow when ready -->
+          <span aria-hidden="true">·</span>
+          <a href="mailto:support@qamishlo.org?subject=Beta%20tester">Beta testers</a>
         </p>
-        <p>Screen-free AI audio courses for kids and parents. © 2026</p>
+        <p>Audio courses for the way. © 2026 Qamishlo</p>
         <p class="footer-credit">
-          created by Gidrono -
-          <a href="mailto:gidi@qamishlo.org">gidi@qamishlo.org</a>
+          Made with care by Gidi &amp; Dafna ·
+          <a href="mailto:support@qamishlo.org">support@qamishlo.org</a>
         </p>
       </div>
     </footer>
