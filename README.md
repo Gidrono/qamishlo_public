@@ -1,10 +1,8 @@
 # Qamishlo
 
-Public landing page for **Qamishlo** — a hands-free audio learning app.
+Public landing page for **Qamishlo** - a hands-free audio learning app for commuters.
 
-Type a topic, get a short multi-chapter AI-narrated audio course, and listen on the train, in the car, or on a walk. Pause anytime and ask questions by voice. Age bands for families (5–9, 10–14) and adults (15+), family sharing, offline downloads, and a lock-screen player.
-
-Visual design tracks the product app (sage/mint, Fraunces, wheel+book mark, desert vista). Fonts are self-hosted under `fonts/` (SIL OFL).
+Visual design tracks the product app (sage/mint, Fraunces, wheel+book mark, desert vista).
 
 Hosted on **GitHub Pages**. Pushes to `main` publish automatically.
 
