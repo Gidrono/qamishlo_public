@@ -607,7 +607,6 @@ button.chip.selected:hover {
 /* Stage / family */
 .stage,
 .interrupt,
-.trust,
 .for-you,
 .steps,
 .library,
@@ -625,7 +624,6 @@ button.chip.selected:hover {
 
 .stage-copy p,
 .interrupt-head p,
-.trust-copy p,
 .for-you-copy p,
 .library-head p,
 .download > p {
@@ -634,7 +632,6 @@ button.chip.selected:hover {
   max-width: 40rem;
 }
 
-.trust-copy,
 .for-you-copy {
   max-width: 640px;
   margin-bottom: 36px;
